@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import { site } from "../data/site";
+import { coverLetter } from "../data/expertise";
+import { withBase } from "../utils";
+---
+<Base title="Cover Letter" path="/cover-letter/" description="A concise executive cover letter introducing Mohammad Abul Rahat Chowdhury's experience, capabilities and career direction.">
+  <Section eyebrow="Cover letter" title="A concise introduction" lead={coverLetter.subtitle}>
+    <div class="flex flex-wrap gap-3">
+      <a href={withBase(site.coverLetter)} class="btn btn-primary" download>Download cover letter (PDF)</a>
+      <a href={withBase(site.cv)} class="btn btn-ghost" download>Download CV</a>
+    </div>
+    <p class="mt-4 text-sm text-muted">{coverLetter.note}</p>
+
+    <!-- Letter, styled as a formal letter but integrated into the site -->
+    <article class="card mt-10 p-8 md:p-12">
+      <div class="border-b border-line pb-6">
+        <p class="font-serif text-xl font-medium text-navy">{site.name}</p>
+        <p class="mt-1 text-sm text-muted">{site.positioning} · {site.location}</p>
+        <p class="mt-1 text-sm text-muted">{site.email} · {site.linkedinLabel}</p>
+      </div>
+      <div class="mt-8 space-y-5 leading-relaxed text-ink">
+        <p>{coverLetter.salutation}</p>
+        {coverLetter.paragraphs.map((p) => <p>{p}</p>)}
+        <div class="pt-4">
+          <p>{coverLetter.signoff}</p>
+          <p class="mt-3 font-semibold text-navy">{coverLetter.signature}</p>
+          <p class="text-sm text-muted">{coverLetter.signatureLine}</p>
+        </div>
+      </div>
+    </article>
+  </Section>
+</Base>

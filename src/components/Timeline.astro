@@ -1,0 +1,31 @@
+---
+import type { experience as ExpType } from "../data/about";
+interface Props { items: any[]; }
+const { items } = Astro.props;
+---
+<div class="relative">
+  <div class="absolute left-[7px] top-2 bottom-2 w-px bg-line md:left-[9px]" aria-hidden="true"></div>
+  <div class="space-y-12">
+    {items.map((job) => (
+      <div class="relative pl-8 md:pl-12">
+        <span class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-2 border-navy bg-paper md:h-[18px] md:w-[18px]"></span>
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">{job.period}</p>
+        <h3 class="mt-1 text-xl font-semibold text-navy">{job.role} <span class="text-muted font-normal">— {job.org}</span></h3>
+        <p class="text-sm text-muted">{job.location}</p>
+        <p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-ink">{job.summary}</p>
+        <div class="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+          {job.groups.map((g: any) => (
+            <div>
+              <p class="text-sm font-semibold text-navy">{g.label}</p>
+              <ul class="mt-1 space-y-1">
+                {g.points.map((p: string) => (
+                  <li class="text-sm leading-relaxed text-muted">{p}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

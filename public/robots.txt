@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rabbilnmoor-lang.github.io/rahat-chowdhury-portfolio/sitemap.xml

@@ -1,0 +1,22 @@
+---
+import { withBase } from "../utils";
+import type { Project } from "../data/projects";
+interface Props { project: Project; }
+const { project } = Astro.props;
+---
+<a href={withBase(`/projects/${project.slug}/`)} class="card card-hover group flex h-full flex-col p-6">
+  <p class="eyebrow">{project.category}</p>
+  <h3 class="mt-2 font-serif text-xl font-medium text-navy group-hover:text-slate2">{project.title}</h3>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{project.short}</p>
+  {project.metrics && project.metrics.length > 0 && (
+    <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+      {project.metrics.slice(0, 2).map((m) => (
+        <div>
+          <span class="font-serif text-lg font-semibold text-navy">{m.value}</span>
+          <span class="ml-1 text-xs text-muted">{m.label}</span>
+        </div>
+      ))}
+    </div>
+  )}
+  <span class="mt-5 text-sm font-semibold text-accent">View case study →</span>
+</a>

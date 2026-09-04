@@ -1,0 +1,35 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import { expertise, tools } from "../data/expertise";
+---
+<Base title="Expertise" path="/expertise/" description="Capability matrix across strategy, aviation/GSA, project & infrastructure, commercial & financial, and operations, plus tools and methods.">
+  <Section eyebrow="Expertise" title="Strategy, commercial development & execution" lead="A capability matrix across the areas I work in.">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {expertise.map((group) => (
+        <div class="card p-6">
+          <h3 class="font-semibold text-navy">{group.title}</h3>
+          <ul class="mt-3 space-y-1.5">
+            {group.items.map((it) => (
+              <li class="flex gap-2 text-sm text-muted"><span class="text-accent">›</span><span>{it}</span></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <section class="border-t border-line bg-mist">
+    <div class="container-x py-16">
+      <p class="eyebrow">Tools &amp; methods</p>
+      <h2 class="mt-2 font-serif text-3xl font-medium text-navy">How I get the work done</h2>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {tools.core.map((t) => <span class="rounded-md border border-line bg-paper px-4 py-2 text-sm font-medium text-navy">{t}</span>)}
+      </div>
+      <p class="mt-8 eyebrow">Developing</p>
+      <div class="mt-3 flex flex-wrap gap-3">
+        {tools.developing.map((t) => <span class="chip">{t}</span>)}
+      </div>
+    </div>
+  </section>
+</Base>

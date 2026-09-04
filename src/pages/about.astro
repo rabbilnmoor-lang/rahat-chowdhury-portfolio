@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Pillar from "../components/Pillar.astro";
+import Flow from "../components/Flow.astro";
+import { site } from "../data/site";
+import { about, pillars, workflow, education, recognition } from "../data/about";
+import { withBase } from "../utils";
+---
+<Base title="About" path="/about/" description="Aeronautical engineer and IBA MBA with about 8 years across aviation, airline GSA, logistics, infrastructure and corporate strategy.">
+  <Section eyebrow="About me" title="Strategy, commercial development and execution — end to end">
+    <div class="grid gap-10 md:grid-cols-12 md:items-start">
+      <div class="md:col-span-4">
+        <img
+          src={withBase(site.photo)}
+          srcset={`${withBase(site.photoSm)} 480w, ${withBase(site.photo)} 900w`}
+          sizes="(min-width: 768px) 30vw, 70vw"
+          width="900" height="1234"
+          alt="Portrait of Mohammad Abul Rahat Chowdhury"
+          class="mx-auto w-full max-w-xs rounded-xl border border-line object-cover shadow-[0_16px_40px_rgba(15,42,71,0.14)] md:mx-0 md:max-w-none"
+          loading="lazy"
+        />
+      </div>
+      <div class="space-y-5 md:col-span-8">
+        {about.intro.map((p) => <p class="text-[17px] leading-relaxed text-ink">{p}</p>)}
+      </div>
+    </div>
+  </Section>
+
+  <section class="border-y border-line bg-mist">
+    <div class="container-x py-16 md:py-20">
+      <p class="eyebrow">How I work</p>
+      <h2 class="mt-2 font-serif text-3xl font-medium text-navy md:text-4xl">Four connected strengths</h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {pillars.map((p, i) => <Pillar index={i + 1} title={p.title} body={p.body} />)}
+      </div>
+      <div class="mt-12">
+        <p class="eyebrow">The sequence</p>
+        <div class="mt-4"><Flow steps={workflow} /></div>
+      </div>
+    </div>
+  </section>
+
+  <Section eyebrow="Education & recognition" title="Business training with an engineering foundation">
+    <div class="grid gap-5 md:grid-cols-2">
+      {education.map((e) => (
+        <div class="card p-6">
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="font-semibold text-navy">{e.degree}</h3>
+            <span class="text-sm font-semibold text-accent">{e.year}</span>
+          </div>
+          <p class="mt-1 text-sm text-muted">{e.institution}</p>
+          <p class="mt-1 text-sm text-muted">{e.detail}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {recognition.map((r) => <span class="chip">{r}</span>)}
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,17 @@
+---
+// Horizontal (wraps) process flow with arrows; vertical on mobile.
+interface Props { steps: string[]; class?: string; }
+const { steps, class: cls = "" } = Astro.props;
+---
+<div class:list={["flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center", cls]}>
+  {steps.map((step, i) => (
+    <>
+      <span class="rounded-md border border-line bg-mist px-3 py-2 text-center text-sm font-medium text-navy">{step}</span>
+      {i < steps.length - 1 && (
+        <span class="mx-auto text-accent sm:mx-0" aria-hidden="true">
+          <span class="hidden sm:inline">→</span><span class="sm:hidden">↓</span>
+        </span>
+      )}
+    </>
+  ))}
+</div>

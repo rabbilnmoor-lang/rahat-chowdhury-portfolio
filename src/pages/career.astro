@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Timeline from "../components/Timeline.astro";
+import { experience } from "../data/about";
+import { site } from "../data/site";
+import { withBase } from "../utils";
+---
+<Base title="Career" path="/career/" description="Career journey: Senior Analyst at Expo Group (2019–present) and Senior Executive at Euclid Technologies (2017–2019).">
+  <Section eyebrow="Career journey" title="Growing scope across strategy, projects and operations" lead="From supply-chain and commercial foundations into a broad, cross-functional strategy-and-operations role.">
+    <Timeline items={experience} />
+    <div class="mt-12">
+      <a href={withBase(site.cv)} class="btn btn-primary" download>Download full CV</a>
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,16 @@
+---
+interface Props { eyebrow?: string; title?: string; lead?: string; center?: boolean; class?: string; }
+const { eyebrow, title, lead, center = false, class: cls = "" } = Astro.props;
+---
+<section class:list={["py-16 md:py-20", cls]}>
+  <div class="container-x">
+    {(eyebrow || title || lead) && (
+      <div class:list={[center ? "mx-auto max-w-2xl text-center" : "max-w-3xl", "mb-10"]}>
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        {title && <h2 class="mt-2 font-serif text-3xl font-medium text-navy md:text-4xl">{title}</h2>}
+        {lead && <p class="mt-4 text-lg leading-relaxed text-muted">{lead}</p>}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>

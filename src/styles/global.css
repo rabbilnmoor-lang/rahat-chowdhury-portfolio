@@ -1,0 +1,27 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource/fraunces/400.css';
+@import '@fontsource/fraunces/500.css';
+@import '@fontsource/fraunces/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper text-ink font-sans antialiased; }
+  ::selection { background: #0F2A47; color: #fff; }
+  h1,h2,h3,h4 { @apply tracking-tightish; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto max-w-content px-6 md:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent; }
+  .link-underline { @apply underline decoration-line underline-offset-4 hover:decoration-navy transition-colors; }
+  .card { @apply rounded-lg border border-line bg-paper transition-shadow duration-200; }
+  .card-hover { @apply hover:shadow-[0_8px_30px_rgba(15,42,71,0.08)] hover:border-slate2/30; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-colors; }
+  .btn-primary { @apply bg-navy text-white hover:bg-slate2; }
+  .btn-ghost { @apply border border-line text-ink hover:border-navy hover:text-navy; }
+  .chip { @apply inline-block rounded-full border border-line px-3 py-1 text-xs text-muted; }
+}

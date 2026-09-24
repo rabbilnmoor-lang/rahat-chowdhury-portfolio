@@ -5,9 +5,9 @@
 export const site = {
   name: "Mohammad Abul Rahat Chowdhury",
   shortName: "Rahat Chowdhury",
-  role: "Senior Analyst — Expo Group", // official title (do not inflate)
-  positioning: "Strategy & Business Development Professional",
-  positioningLine: "Aviation · Logistics · Corporate Strategy · Project Execution",
+  role: "Specialist (Manager) — Expo Group", // official title (do not inflate)
+  positioning: "Corporate Strategy & Strategic Projects Professional",
+  positioningLine: "Corporate Strategy · Strategic Projects · Project Management · Business Planning",
   location: "Dhaka, Bangladesh",
   email: "rahat.iba52@hotmail.com",
   linkedin: "https://www.linkedin.com/in/mohammad-abul-rahat-chowdhury-08537162/",
@@ -22,26 +22,26 @@ export const site = {
   photoSm: "images/rahat-portrait-sm.jpg",
 
   // SEO
-  siteUrl: "https://rabbilnmoor-lang.github.io/rahat-chowdhury-portfolio", // <-- change to your GitHub Pages URL
+  siteUrl: "https://rabbilnmoor-lang.github.io/rahat-chowdhury-portfolio",
   description:
-    "Strategy and business-development professional with about 8 years across aviation, airline GSA, logistics, freight forwarding, infrastructure and corporate strategy. Experienced in business cases, project execution, commercial development and operations.",
+    "Corporate strategy and strategic-projects professional with about 8 years of experience in corporate strategy, strategic projects, project management and business planning within a large, diversified group. Progressed from Analyst to Specialist (Manager) at Expo Group, owning strategic projects, business cases and business-development initiatives across aviation, logistics and infrastructure.",
   keywords: [
     "Corporate Strategy",
-    "Business Development",
-    "Airline GSA",
-    "Cargo GSA",
-    "Aviation",
-    "Air Cargo",
-    "Logistics",
-    "Freight Forwarding",
-    "ICD",
-    "CFS",
-    "Project Management",
-    "Operational Excellence",
-    "Financial Modelling",
-    "Business Planning",
     "Strategic Projects",
-    "Supply Chain",
+    "Project Management",
+    "Business Planning",
+    "Business Development",
+    "Corporate Development",
+    "Financial Analysis",
+    "Financial Modelling",
+    "Commercial Strategy",
+    "Business Case",
+    "Stakeholder Management",
+    "Operational Improvement",
+    "Bangladesh",
+    "Manager",
+    "Airline GSA",
+    "Logistics",
   ],
 };
 
